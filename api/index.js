@@ -31,6 +31,17 @@ bot.onText(/\/show_url/, (msg) => {
     );
 });
 
+bot.onText(/\/show_nim/, (msg) => {
+    global_msg_id = msg.chat.id;
+    bot.sendMessage(
+        global_msg_id,
+        `
+            Nim Kamu : 41421110134 \n
+            https://esp-telebot.herokuapp.com/api/test/cobacoba
+        `
+    );
+});
+
 bot.on('message', (msg) => {
   console.log(msg);
 });
