@@ -17,7 +17,8 @@ bot.onText(/\/start/, (msg) => {
         `hello ${msg.chat.first_name}, welcome...\n
         click /show_url
         click /show_nim
-        click /show_matakuliah`
+        click /show_matakuliah
+        click /show_nilai`
     );
 });
 
@@ -39,6 +40,18 @@ bot.onText(/\/show_nim/, (msg) => {
         `
             Nim Kamu : 41421110134 \n
             Kampus : Mercubuana
+        `
+    );
+});
+
+bot.onText(/\/show_nilai/, (msg) => {
+    global_msg_id = msg.chat.id;
+    bot.sendMessage(
+        global_msg_id,
+        `
+            Nilai PBM : B \n
+            Nilai PSD : A \n
+            Nilai Elektromagnetik : B
         `
     );
 });
@@ -72,11 +85,11 @@ router.get('/', (req, res, next) => {
 });
 
 // https://esp-telebot.herokuapp.com/api/sensor/123/65/78
-router.get('/sensor/:sensor1/:sensor2/:sensor3', (req, res, next) => {
+router.get('/sensor/:sensor1/:sensor2/:sensor3/:sensor4', (req, res, next) => {
   try {
       bot.sendMessage(
             global_msg_id, //msg.id
-            `Pembacaan Sensor:: ${req.params.sensor1}, ${req.params.sensor2}, ${req.params.sensor3}`
+            `Pembacaan Sensor:: ${req.params.sensor1}, ${req.params.sensor2}, ${req.params.sensor3}, ${req.params.sensor4}`
      );
       res.json({
         "status": 202,
@@ -84,7 +97,8 @@ router.get('/sensor/:sensor1/:sensor2/:sensor3', (req, res, next) => {
         "data": {
           "sensor_1": req.params.sensor1,
           "sensor_2": req.params.sensor2,
-          "sensor_3": req.params.sensor3
+          "sensor_3": req.params.sensor3,
+           "sensor_3": req.params.sensor4
         }
       });
   } catch (err) {
