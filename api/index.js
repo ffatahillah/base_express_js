@@ -16,7 +16,8 @@ bot.onText(/\/start/, (msg) => {
         global_msg_id,
         `hello ${msg.chat.first_name}, welcome...\n
         click /show_url
-        click /show_nim`
+        click /show_nim
+        click /show_matakuliah`
     );
 });
 
@@ -37,7 +38,22 @@ bot.onText(/\/show_nim/, (msg) => {
         global_msg_id,
         `
             Nim Kamu : 41421110134 \n
-            https://esp-telebot.herokuapp.com/api/test/cobacoba
+            Kampus : Mercubuana
+        `
+    );
+});
+
+bot.on('message', (msg) => {
+  console.log(msg);
+});
+
+bot.onText(/\/show_matakuliah/, (msg) => {
+    global_msg_id = msg.chat.id;
+    bot.sendMessage(
+        global_msg_id,
+        `
+            Mata Kuliah : Perancangan Berbasis Mikroprosessor \n
+            Semester : Ganjil 2021/2022
         `
     );
 });
