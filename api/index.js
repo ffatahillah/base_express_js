@@ -98,7 +98,7 @@ router.get('/sensor/:sensor1/:sensor2/:sensor3/:sensor4', (req, res, next) => {
           "sensor_1": req.params.sensor1,
           "sensor_2": req.params.sensor2,
           "sensor_3": req.params.sensor3,
-           "sensor_3": req.params.sensor4
+          "sensor_4": req.params.sensor4
         }
       });
   } catch (err) {
