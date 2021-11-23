@@ -85,7 +85,7 @@ router.get('/', (req, res, next) => {
 });
 
 // https://esp-telebot.herokuapp.com/api/sensor/123/65/78
-router.get('/sensor/:sensor1/:sensor2/:sensor3/:sensor4', (req, res, next) => {
+router.get('/sensor/:sensor1/:sensor2/:sensor3/:sensor4/', (req, res, next) => {
   try {
       bot.sendMessage(
             global_msg_id, //msg.id
